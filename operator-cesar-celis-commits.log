@@ -1,0 +1,463 @@
+commit 92052adb1863acce8f9a976a2c6ff3fe1c323d3a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Aug 1 23:03:54 2023 -0600
+
+    Helm: Adding digest option in Operator image (#1706)
+    
+    Adding digest option in Operator image
+
+commit d6117796978ce592e8a1cce5c47b743386f722de
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jul 10 11:06:28 2023 -0600
+
+    Updating OpenShift Version (#1674)
+    
+    Co-authored-by: Pedro Juarez <pjuarezd@users.noreply.github.com>
+
+commit 6ba469a238c21abeb6ad78d482ee7fa0fbdb93a5
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jun 27 16:49:01 2023 -0600
+
+    Warn user about the proper use of subPath field (#1594)
+    
+    To be consistent across the repo for subPath field
+
+commit f0cafa93f98d69d039b111b330591df744458450
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jun 27 16:48:22 2023 -0600
+
+    Adding useful information to trust cert-manager cert for minio (#1631)
+
+commit 9562a292fa407f59ed3e1760bcdeeff0e6c61e88
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jun 26 23:25:50 2023 -0600
+
+    Add Pod Topology Spread Constraints (#1648)
+
+commit b89aad9e0059624b558c23c895172213329068eb
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jun 12 15:45:40 2023 -0600
+
+    Applying same console fix for the subpath issue (#1616)
+
+commit cf370501c03085a0d2559b0d7a8b9b7d1e61a4e1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 20 12:16:50 2023 -0600
+
+    OLM: Correcting UI image (#1574)
+    
+    Operator UI is no longer in Console Repo
+
+commit b4accffe024fec3a9df05cd84b0d0685a02a79c7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 20 12:15:54 2023 -0600
+
+    OLM: Conversion webhook is no longer needed (#1573)
+    
+    conversion not needed after removing tenant v1
+
+commit f3730ea254d8c6c0b545d53b7ba2415969e7d8c4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 18 16:57:43 2023 -0600
+
+    Files to be committed to the Catalogs (#1571)
+    
+    Modifying files needed for the creation of OperatorHub Release
+
+commit 350c8bec979f1c971eb551d9f1ba8a7e18a04140
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 18 10:58:11 2023 -0600
+
+    Supporting different archs and OSes (#1570)
+
+commit 4c61d70e3aad50b09fc67855c0b3ec00edeffaf8
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 18 08:32:03 2023 -0600
+
+    To provide upgrade channel for Operator (#1569)
+
+commit f2f22b7b32416b6c42e5c17fa4c8c91312d24f07
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 18 08:28:03 2023 -0600
+
+    One replica only for Code Ready Containers with one node (#1566)
+
+commit 4e436e5f6d4c1d1a39d42093d9c5e259b684e2b4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Apr 17 08:50:08 2023 -0600
+
+    Using service.beta.openshift.io as recommended method (#1567)
+    
+    the newer service.beta.openshift.io annotation which is the current recommended method.
+
+commit aa9aedd4a35438cbdc1ced46821b6fb2029604a5
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Apr 17 08:48:38 2023 -0600
+
+    OpenShift 4.7 has reached its end of life (#1565)
+
+commit 5a24030f31d8105b5aa5e8286b598411d0241da3
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 13 06:14:59 2023 -0600
+
+    Using digested form (#1548)
+
+commit 26029959a98391b457f67994d23c38ed26d5340f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 13 06:14:32 2023 -0600
+
+    Let user select their own values (#1549)
+
+commit 8b7654688fafae8459ccc505934f915daa45d785
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 12 10:15:14 2023 -0600
+
+    To add back kubeconfig flag missing in v5.0.x (#1561)
+    
+    Adding missing flag
+
+commit 471bc5de3b5021d4abba3137a89a839a6a6271f9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 5 14:56:40 2023 -0600
+
+    Release v5.0.3 (#1554)
+
+commit c0f148d843c1bf44ad7dd0e84e7b7b3606e93bcf
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 5 06:52:24 2023 -0600
+
+    Fixing issue due to missing tenant being removed (#1546)
+
+commit 9892fc3fd4bb981262ed2da616ef5bb4a0b2bbc9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 5 06:48:11 2023 -0600
+
+    Allow Operator Create the namespace for the tenant (#1550)
+
+commit 4be5eedcd40b90c026414f2df7fadd94ee27f9c7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 4 05:44:06 2023 -0600
+
+    Removing duplicated string from registry (#1547)
+
+commit 5f0856d667b352d75fac0a276d173c2d7cf6e992
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 31 17:15:18 2023 -0600
+
+    Update deprecated Objects only if they exist (#1540)
+
+commit 9c54acffd08ba08cd3033cca8acafbe5409d00d5
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 28 12:29:05 2023 -0600
+
+    Stop tests to execute for hours when they are stuck (#1524)
+    
+    Adding timeout
+
+commit 11e20b4715401fda9dce6d53a31d078e70e392ea
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 13 21:19:49 2023 -0600
+
+    Allow empty securityContext (#1462)
+    
+    Let OpenShift pick its own users, don't hardcode them
+    
+    Co-authored-by: MinIO Bot <minio.bot@minio.io>
+
+commit c14191b46d701d81649a02d279f5868432fee42c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 3 13:14:36 2023 -0600
+
+    Remove test never used (#1486)
+
+commit 0e378c830dbd032ac4615ca5f6425c2c77152b6c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 28 15:21:13 2023 -0600
+
+    Trust openshift signer (#1461)
+
+commit fdacf35f9ef1eb746712be15dedf40a11024e228
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 28 15:20:32 2023 -0600
+
+    Update versions and fix KES Test (#1457)
+
+commit d9b6a75a8be791a26eb093bc5067099be272549a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 7 18:01:00 2023 -0600
+
+    Renaming test flag (#1441)
+    
+    Co-authored-by: MinIO Bot <minio.bot@minio.io>
+
+commit 78242875e23582e1d8cb1bf0ac9cb19ad9ecdf9e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Feb 6 13:43:43 2023 -0600
+
+    Adding kind configuration for NodePort Testing (#1434)
+    
+    Co-authored-by: MinIO Bot <minio.bot@minio.io>
+
+commit bfc6038194c7e7e4fa564f65c8dd8faf3574feef
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jan 31 11:11:32 2023 -0600
+
+    Deprecating audit logs from kustomization examples (#1425)
+    
+    deprecating audit logs from kustomization
+
+commit 70d38ccbaf7a8521218729ad664e89871963ff3f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 27 19:01:53 2023 -0500
+
+    Adding KES example with cert-manager (#1415)
+
+commit 5a7917cddfc6cb36b4e78b0d3e47afbd7a2ec2ba
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jan 24 16:51:56 2023 -0500
+
+    Allow manual execution by keeping cluster alive (#1413)
+
+commit 2268b4e3e7debbfdff556d7ab2fe1d4d583d341b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Sep 6 12:26:51 2022 -0400
+
+    Updating golangci-lint (#1277)
+
+commit cc5e1b200810971ff32ef756bfddbc4cc66764de
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Aug 30 17:37:59 2022 -0400
+
+    Adding automation script to update version in Community Catalog (#1179)
+
+commit 29d5245f6856bb3b92e850134f19ebc02a3c9c74
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Aug 23 16:17:06 2022 -0400
+
+    To fix tls issue in OpenShift (#1248)
+
+commit 0f187b41e61195f5d5f6886358289be885d84887
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Aug 17 11:46:24 2022 -0400
+
+    Using container image digests from RedHat Registry (#1241)
+
+commit 093a6d7779ff989519f9d6ad33a277e71457d55d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jul 18 21:52:42 2022 -0400
+
+    To delete audit log config when disabled (#1208)
+
+commit 56cf25b79ce178329caab2ef4f2c583146763dd4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 10 19:32:00 2022 -0400
+
+    Remove unnecessary code from olm.sh (#1161)
+
+commit 41a35346c96b178fab68748ed86a037554e36ed3
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 3 23:41:55 2022 -0400
+
+    Using digest for Operator update in Certified Operators Repo (#1145)
+    
+    using digest instead
+
+commit dd9dedb9f4cf6ddcd9daa51fccaedc67e5e79a78
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 3 23:12:50 2022 -0400
+
+    Script to update RHMP Operator (#1147)
+    
+    script to update redhat marketplace
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 9612f1b4c922ce9f8602087d9d407001489f8a03
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 26 22:14:20 2022 -0400
+
+    Add support for community operators (#1131)
+
+commit f2e3fcd7a9fbaf63268711cbf7dbf00ed9c967a1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed May 25 12:51:53 2022 -0400
+
+    To update instructions to get token via helm installation (#1148)
+    
+    update instructions to get token via helm installation
+
+commit 5ebed95663c5f2241f81a2d250c8df9474bac2a8
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat May 21 00:56:58 2022 -0400
+
+    fix: Kes deployment test (#1135)
+
+commit aa435293c8b4a56e0fa25c143ee0a7a74f9b2fbb
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat May 21 00:18:33 2022 -0400
+
+    Correcting path for clean up (#1136)
+
+commit 8e7d3e5a1088b8ed3088f6df26c7da58728d47e9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 17 20:05:38 2022 -0400
+
+    Add digest version after release in a post script (#1125)
+
+commit 90b54045cadf2df876901d5918f9c723f53faef7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 17 14:21:15 2022 -0400
+
+    Correcting operator version (#1124)
+    
+    correcting operator version
+
+commit 4c35651e5e1872cf5f9a6f5908e8e1b443e1264e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 17 02:43:01 2022 -0400
+
+    Add AuditLog support to Tenant Helm Chart (#1117)
+
+commit fc727ac8bb17089f9b1aaa93eeb87475b83f4196
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 10 11:40:11 2022 -0400
+
+    To support RedHat Catalogs for OpenShift (#1115)
+
+commit cd17edf5addb6c8049d19a9053ccd9c469c70a7a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 21 13:02:13 2022 -0400
+
+    Adding missing line for default bundle channel (#1099)
+
+commit ff208eb46fb43ba55cb7c19c1d9259bfd0c6efd7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 20 16:02:01 2022 -0400
+
+    Adding OpenShift Supported Version in the Bundle (#1097)
+
+commit ba4c097324b24a0762e50986e3ae20fea183af7b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 14 17:22:19 2022 -0400
+
+    Add Prometheus on Helm Chart (#1086)
+
+commit a1bccbf19a1f0f00d11b967c863920e99ff562f9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 14 11:23:55 2022 -0400
+
+    Adding logging example (#1089)
+
+commit d732f06fa3c79a506323153e9a2c33befe4f811e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 6 17:02:00 2022 -0400
+
+    Adding kes on helm (#1082)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 3ddb9e173f839b955dacf65721268ce7b126cae0
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 5 22:07:59 2022 -0400
+
+    Fixing annotation issue on helm chart (#1085)
+
+commit 39b6185866725b743b53afc414a1bb4b1d1a5fba
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 24 21:33:11 2022 -0400
+
+    update pod name on log test (#1064)
+
+commit e307a9dff19e414c7a1a77b1d9d97b694ff543a4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 24 20:39:56 2022 -0400
+
+    updating pod name (#1062)
+
+commit c8758c26094ad3ca0d6febcbae7531a12f8d41c3
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Feb 7 15:11:25 2022 -0500
+
+    To fix "Logs test on Kind" test by attempting more than one time getting the API response. (#1007)
+
+commit 0b73c71949f78d77b3e878c1a00d0356f7e3b551
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 31 21:03:37 2022 -0600
+
+    Add build automation for Helm Chart (#972)
+
+commit 774af325fd0586f5d8f945ea5a6eda949869189f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jan 13 11:17:17 2022 -0500
+
+    Adding Logs Test (#967)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+
+commit d4fac3a15ac1808f83f7744e40e7e1d026434f86
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jan 12 18:14:09 2022 -0500
+
+    tests: add prometheus Test (#966)
+
+commit 25ffd008829b038934128f0825bdb2f1e11a9369
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 10 17:51:48 2022 -0500
+
+    To compile current branch prior deploying the operator (#965)
+    
+    * To compile current branch
+    
+    * using proper go version
+    
+    * adding missing setup-go step
+    
+    * adding kes test too to use proper go version
+    
+    * to print the pods images
+    
+    * adding kustomization patch for using compiled image
+    
+    * to print kustomize version
+    
+    * removing deployment from kustomize to debug issue on ubuntu
+    
+    * applying the dev patch to use dev image
+    
+    * putting back deployment on kustimization file for visibility on dev patch
+    
+    * to avoid accumulating the resources, declaring deployment only in one spot
+    
+    * adding back deployment in base resources
+    
+    * removing deployment from base kustomization as it is not needed for the ubuntu image on github actions
+    
+    * removing the resources from path
+    
+    * reorganizing kustomization files as noted in the documentation
+    
+    * modifying the kustomization for crds to be a folder
+    
+    * let each folder expose its resources
+    
+    * testing new structure to include crds
+    
+    * to see the status of the pod
+    
+    * debugging to see the Failed to pull image message
+    
+    * to load image with kind in order to have it available
+    
+    * re-organizing the commands, to complete the PR
+    
+    * putting back the kustomization file under resources and re-organizing dev files under testing folder this time
+    
+    * reverting change on this file, is not needed
+    
+    * adding new line at the end of the file
+    
+    * adding new line at the end of the file
+    
+    * this time using testing folder
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
