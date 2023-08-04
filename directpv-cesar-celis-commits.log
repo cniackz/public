@@ -1,0 +1,188 @@
+commit d1645c038b2f9adbeb747fae2a4c7863331372ca
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jul 14 17:26:38 2023 -0400
+
+    Create DirectPV Operator
+
+commit 616951a09697445e404c5f6dc865cf973aa8cf7a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jul 13 11:56:45 2023 -0600
+
+    Adding related images in bundle (#813)
+    
+    ### Objective:
+    
+    To add related images to the bundle
+    
+    ### Reasoning:
+    
+    It is needed for the certification because of:
+    https://github.com/redhat-openshift-ecosystem/certification-releases/blob/main/4.9/ga/troubleshooting.md#verify-pinned-digest
+    where `spec.relatedImages` section must be present for test to pass.
+    
+    ### Related:
+    
+    *
+    https://github.com/redhat-openshift-ecosystem/redhat-marketplace-operators/pull/510
+    
+    ### How it will look:
+    
+    ```yaml
+    spec:
+      relatedImages:
+        - image: registry.redhat.io/openshift4/ose-csi-external-provisioner@sha256:778aa6e5ea046bfcd865e665679c30362dc8c00cfb33a0cdcc56b2395e8ab504
+          name: csi-provisioner
+        - image: registry.redhat.io/openshift4/ose-csi-external-resizer-rhel8@sha256:837b32a0c432123e2605ad6d029e7f3b4489d9c52a9d272c7a133d41ad10db87
+          name: csi-resizer
+        - image: registry.connect.redhat.com/minio/directpv@sha256:53610c35d42971ad57ce8491dbcab3b95395a68820d9024a1298b9f653802688
+          name: controller
+    ```
+
+commit b3f0ae1622976e7406da8ab830cf6518fdbebee0
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jul 11 09:44:29 2023 -0600
+
+    Add v4.0.6 bundle for Red Hat CSI Certification (#812)
+
+commit 837b1f5edad434ad84da8263139e46d746cb7c34
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jul 8 09:42:39 2023 -0600
+
+    Add macOS and OS architecture support in olm.sh (#810)
+
+commit bfff55253457db7498a7f746e8d1c4ee56451352
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jun 21 23:32:28 2023 -0600
+
+    Using redhat containers in olm script (#794)
+    
+    ### Objective:
+    
+    To use RedHat containers in olm script.
+    
+    ### Reason:
+    
+    Once each container has been properly certified and published, then (and
+    only then) can you certify your operator bundle.
+    
+    ### Case:
+    
+    https://access.redhat.com/support/cases/#/case/03522469
+    
+    Co-authored-by: Bala FA <bala@minio.io>
+
+commit 7cf106c2d32f096d68ccf6eba548b3842c2d4a04
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jun 21 23:31:51 2023 -0600
+
+    Using redhat containers (#793)
+    
+    ### Objective:
+    
+    To use redhat containers for certification.
+    
+    ### Reasoning:
+    
+    https://access.redhat.com/support/cases/#/case/03522469
+    Once each container has been properly certified and published, then (and
+    only then) can you certify your operator bundle.
+    
+    ### How to test:
+    
+    ```sh
+    $ docker login https://registry.redhat.io
+    Username: <User>
+    Password: <Password>
+    Login Succeeded
+    ```
+    
+    ```sh
+    image="registry.redhat.io/openshift4/ose-csi-external-provisioner"
+    docker pull "$image" | awk '/Digest/ { print $2}'
+    ```
+    
+    Co-authored-by: Bala FA <bala@minio.io>
+
+commit e4b1c564c56fb65f6c4e7341497ce847699e7425
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 25 10:09:30 2023 -0600
+
+    Add icon after bundle creation for Red Hat CSI Certification (#778)
+
+commit 61ac0f2f6f74b337b2c752c917754e856ff48795
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 25 04:13:25 2023 -0600
+
+    Automate the use of SHA Digest for Red Hat CSI Certification (#775)
+
+commit 87fb83ae8fedeefe445b06c37d192928ccd77bbe
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 25 04:12:25 2023 -0600
+
+    Add CSV Spec Icon for Red Hat CSI Certification (#776)
+
+commit 388b176a9001e15760ecda71b5c8a57a65dbe46e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 23 22:27:13 2023 -0600
+
+    fix package name for Red Hat CSI Certification (#774)
+    
+    Notice `minio-directpv.clusterserviceversion.yaml` does not longer
+    exist, name has to be corrected accordingly for new package name.
+
+commit c03e034168b421d67dad0d11e9fb274fd8bffa50
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 23 11:05:46 2023 -0600
+
+    Use image SHA Digest for Red Hat CSI Certification (#773)
+    
+    ### Objective:
+    
+    To use SHA Digest in the images of the CSV
+    
+    ### Reasoning:
+    
+    All images referenced in your Operator Bundle must reference SHA digest
+    and not tags. The existence of tags in your bundle will cause a
+    certification failure Replace all image tags with image digests.
+    
+    ### Docs:
+    
+    *
+    https://github.com/redhat-openshift-ecosystem/certification-releases/blob/main/4.9/ga/troubleshooting.md#verify-pinned-digest
+
+commit 84eb3f2a5715da969ddf3b401f5a03e8461b1e91
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 23 06:14:58 2023 -0600
+
+    Add supported OC version for Red Hat CSI Certification (#772)
+
+commit fcba7dd492679f8466378725f4682c61da091026
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri May 19 00:26:13 2023 -0600
+
+    Adding redhat marketplace annotations (#770)
+
+commit 5dd201d9e6603650ede415af0076836e1f65f90e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri May 19 00:25:47 2023 -0600
+
+    fix package name for Red Hat CSI Certification (#771)
+
+commit 0db56a583640e1c4ae41681a02eca29db67aedd4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 18 09:02:27 2023 -0600
+
+    Add missing annotations for Red Hat CSI Certification (#769)
+
+commit 21777cdde48a4c6557ef9948476694251a4e79fe
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed May 17 01:43:03 2023 -0600
+
+    Add support for deploying DirectPV via OLM for Red Hat CSI Certification (#761)
+
+commit 56747fda3135b36807058d2b7a73e8a06ecb7d7e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Nov 22 01:13:06 2022 -0500
+
+    Add drives/volumes migration from DirectCSI to DirectPV (#652)
