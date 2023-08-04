@@ -1,0 +1,1099 @@
+commit 0d628f589a7af8d478b4d777cec7b01374cc37e4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jul 31 22:29:11 2023 -0600
+
+    Removing white spaces from provided values (#2922)
+
+commit 6020590b2f7d236cbad247fff4270c7936b520fa
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 25 10:19:00 2023 -0600
+
+    Make playwright run faster (#2737)
+
+commit f20fa0b1c873ad4a7f29531a805c0459b85a3ae1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 17 17:12:59 2023 -0600
+
+    Condensing Successful responses (#2722)
+
+commit 5cb4e6f65142126c41d450e8af5cead22fc3ef5d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 14 09:26:06 2023 -0600
+
+    Adopting Playwright (#2702)
+
+commit 3b5979d78324f1532c014df947bb343f9441fe23
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 3 11:11:00 2023 -0600
+
+    Compiling when cache is missing (#2688)
+
+commit 4c4094420bcda93334bbc184eafb8022fe10425d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Dec 16 15:16:19 2022 -0500
+
+    Ignoring message from MinIO (#2515)
+    
+    As discussed with @harshavardhana , we should ignore the message on delete in the API. After @poornas changed in PR https://github.com/minio/minio/pull/16221 this message is expected and cannot be considered as an error.
+
+commit 5f07d4584693bb1156b2e5ecb1812441592bc8ea
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Oct 19 03:07:42 2022 -0400
+
+    Moving away from Nancy (#2393)
+    
+    `Nancy` test is failing and the issue is recent:
+    https://github.com/sonatype-nexus-community/nancy/issues/263
+    
+    Move to more idiomatic https://pkg.go.dev/golang.org/x/vuln/vulncheck
+
+commit 2dd92fd9405a03ca518bb4da7abe04584f0f8548
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Oct 18 22:28:43 2022 -0400
+
+    Removing old cache spot for permission test and incrementing the timeout. (#2395)
+
+commit e5508b5c5d4d2c26aec2dc7e2924e223d703344c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Oct 13 14:51:09 2022 -0400
+
+    Fix permission tests (#2379)
+    
+    ### Objective:
+    
+    To fix Permission Tests
+    
+    ### Issue:
+    
+    ```
+    Cannot find module 'minio' or its corresponding type declarations.
+    ```
+    
+    ### Solution:
+    
+    To create the `assets` if there is no cache hit.
+    
+    ```sh
+    make assets
+    ```
+    
+    ### Additional Information:
+    
+    Update the version of the action.
+
+commit 671530f5b4918a4c8258766474b810a55e47533a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Oct 11 17:35:12 2022 -0400
+
+    Go back to Github runners while Datacenter is prepared (#2375)
+
+commit 43db7729c4145320baed1f59a45e0b0165bbd649
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Oct 7 16:42:44 2022 -0400
+
+    Splitting Operator UI Tests for faster execution (#2366)
+
+commit 189331f465fe5e153e3dde40e6887f6a488e8748
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Oct 7 03:18:52 2022 -0400
+
+    Set timeout in all permission tests (#2369)
+
+commit de82a056e6b03e0d6aabf57eb600e2dfbdb70252
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Oct 5 19:33:43 2022 -0400
+
+    Improve Permissions Tests Part 1 (#2359)
+    
+    ### Objective:
+    
+    To fix `Permissions Tests Part 1 (1.18.x, ubuntu-latest)`
+    
+    ### Strategy:
+    
+    To make test more reliable, it has been isolated in folder `A` and `B`,
+    letting other tests to properly pass. And if new failure is observed, it
+    will be either in folder `A` or `B` for `iamPolicies.ts` and
+    `bucketWritePrefixOnly.ts` respectively.
+    
+    ### Root cause:
+    
+    `iamPolicies.ts` and `bucketWritePrefixOnly.ts` are not stable tests
+    when running together with other tests, some sort of racing condition
+    that can be improved by isolating them.
+    
+    ### All tests are passing, same code:
+    
+    <img width="435" alt="Screen Shot 2022-10-05 at 5 48 54 PM"
+    src="https://user-images.githubusercontent.com/6667358/194170348-cdba42ca-08a0-4db4-9543-f2f682ba6603.png">
+
+commit 6ed5084691be98b0f65eeabb4a0034588ea4117d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Sep 15 20:36:00 2022 -0400
+
+    To add missing file for coverage (#2318)
+
+commit 0960835cd94a182f363bc6eb702c770f3d96bfca
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Sep 14 15:22:27 2022 -0400
+
+    To migrate all testcafe (#2309)
+
+commit 3746dd47f8768bd341c7390167baa1f9a5f0f515
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Sep 12 20:59:33 2022 -0400
+
+    To migrate Permissions Tests Part 1 test (#2299)
+    
+    migrate all-permissions-1
+
+commit ce255c5181026cc4c768fb8ca90d0aaeb8eceee7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Sep 12 20:01:24 2022 -0400
+
+    To migrate site replication test (#2276)
+    
+    Migrate site replication test
+
+commit 524258a9eafde867b311215394d8b0f931fef077
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Sep 6 18:49:45 2022 -0400
+
+    To migrate react warning test (#2273)
+
+commit 52512c0ccc0820e40c7aa66a404f0b74b1a432bb
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Sep 6 12:19:31 2022 -0400
+
+    To repair the Operator API Tests & Operator UI Tests (#2292)
+
+commit 2f81b750a3494ae0c12a8825903bf5f0c67421b1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Sep 6 03:12:16 2022 -0400
+
+    To repair SSO test (#2295)
+
+commit 67af66fc553464f9f7d77d00b84c599420a615c9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Aug 29 23:53:50 2022 -0400
+
+    Format all files after swagger-gen (#2283)
+
+commit 288c843a1760ef576cab02c944d633e793582149
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Aug 29 20:28:39 2022 -0400
+
+    Catch error in gofmt (#2266)
+
+commit 9357c2db0eebfd508d1efd20d591eb1bb5f06435
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Aug 29 18:04:09 2022 -0400
+
+    Formatting missing areas with gofmt (#2278)
+    
+    Co-authored-by: Lenin Alevski <alevsk.8772@gmail.com>
+
+commit d279f722f8b536031965ecb13c3f578067675d67
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Aug 26 17:57:27 2022 -0400
+
+    Migrate reuse golang dependencies (#2275)
+
+commit 9539a8e18adad6e4980fe9ced3333ed1a5111824
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Aug 26 16:30:33 2022 -0400
+
+    Migrate semgrep to datacenter (#2271)
+
+commit 3e9fb853d909bcda812139e73c094c61e4ee3f97
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Aug 25 12:44:55 2022 -0400
+
+    Correct gofmt version 1.19 (#2267)
+
+commit 729100ae163fbfb54b0005f35306777c5e7c43fe
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Aug 24 23:09:07 2022 -0400
+
+    Execute Lint Job with Self Hosted Runner (#2265)
+
+commit bcd29a42324d5ba955a07e3e9ade2de6d1927871
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Aug 24 20:34:16 2022 -0400
+
+    Migrate vulnerable-dependencies-checks to datacenter (#2263)
+
+commit 16fd5470dbd484246e52de7672a8339fdb303f92
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Aug 1 19:12:39 2022 -0400
+
+    Correcting response on invalid login attempt (#2216)
+    
+    Verifying detailed message error from bad login in SSO Test
+
+commit fd39e50c08f3f31cb73998c29590983849d306ef
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Aug 1 15:09:07 2022 -0400
+
+    Updating SSO Error Message on bad login (#2215)
+    
+    Updating error message on bad sso login
+
+commit 1a1fae9ce3caadecb97b8b3053e2285e1b6705e6
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jul 23 01:14:46 2022 -0400
+
+    Use intended console code in compiled MinIO (#2193)
+
+commit b5188101067ce5fec171f72b034bd9c5bc8100d3
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 24 19:51:52 2022 -0400
+
+    Avoid the crash in the test (#2147)
+
+commit 618a00d775f7cfbf75e105e6a25168f0bbc1ce63
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jun 22 12:07:40 2022 -0400
+
+    Improving our Operator Test in console (#2138)
+
+commit 41f640077bbea0894b102c9fd8cefb7c38ac3c70
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jun 20 18:24:44 2022 -0400
+
+    Delete Tenant Test (#2098)
+
+commit bfa05616b147511496a3c404acc2972d6cb5c550
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jun 20 17:48:54 2022 -0400
+
+    Wait until resource exist to wait on it (#2136)
+
+commit 02c274e117b740a6bd92e460a92d53e601880e82
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jun 16 11:49:53 2022 -0400
+
+    Relaxing tests when play is down (#2131)
+
+commit 618d95b76e356a310ca30f7567c6b84c029d0325
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jun 11 21:09:55 2022 -0400
+
+    Reduce renders in password when adding a user (#2120)
+
+commit 5d591b18d91f9916801b41555d4846088a462d56
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 10 15:57:52 2022 -0400
+
+    Reduce renders in User Name when adding a user (#2106)
+
+commit 617d41584ea9f7c3fd72291253d99a7a53376210
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jun 8 12:05:42 2022 -0400
+
+    Get Tenant Details (#2097)
+
+commit 427a7516a3d5579c899abd5c8c9b94311ea55c4c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jun 7 12:01:42 2022 -0400
+
+    Isolating users test in Testcafe (#2094)
+
+commit 969feb8efabebb4a7ed790c5625a491d319ab48a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jun 7 01:14:45 2022 -0400
+
+    Adding Tenant Log Test (#2093)
+
+commit 2d80638090ff78035a0dd186c1588f894fbb1d4e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jun 6 16:31:27 2022 -0400
+
+    Add Tenant Logging Tests (#2090)
+
+commit fb2eb0ebf7562890a4425addd6432480031b98de
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jun 4 01:15:13 2022 -0400
+
+    Test logout in Operator API (#2085)
+
+commit a49a4e5513633b6725cf2a7418841b360385c069
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jun 3 18:43:24 2022 -0400
+
+    Add bucket replication test (#2082)
+
+commit 9741462e7bf3f2e17fff78b4ec8e2287da0b2383
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jun 2 23:54:33 2022 -0400
+
+    Accommodate Login Function (#2078)
+
+commit 93d041e55bfa02c725afc9517c0f380f4fbfe8eb
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jun 2 15:24:49 2022 -0400
+
+    Add test to create namespace (#2075)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit e41c80449d37a5bd7b70728ae1346cfc0a14f6de
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jun 1 23:23:14 2022 -0400
+
+    Test list of claims (#2069)
+
+commit d3b1be80ebfa0b3b25205dc110fe44abc90a5f1e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 31 20:05:30 2022 -0400
+
+    adjust threshold (#2066)
+
+commit d956ec65a2f1a9bf19e7b3807c550a054840a0a0
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 31 15:42:16 2022 -0400
+
+    Cover errors in registerAdminArnsHandlers (#2059)
+    
+    To cover errors in registerAdminArnsHandlers
+
+commit 68e98be37645b01d381facc8f489ceb6e96c2d9e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 31 00:39:55 2022 -0400
+
+    Add test for registerAdminArnsHandlers (#2053)
+
+commit c9d174df0918ef3e3e7128bfea097d8042ad384b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 31 00:15:03 2022 -0400
+
+    Wait for PVC to be bounded (#2054)
+
+commit dd4963e3aa423659a11fd085314e3cd9f5bd0829
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat May 28 01:41:39 2022 -0400
+
+    Increment coverage & fix test on full disk (#2050)
+
+commit 04adf25e653ed27df4736e00c7660aa136ee1019
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 26 17:16:36 2022 -0400
+
+    Add csr under tenant details (#1938)
+
+commit 6866b84da8857caf7fb8f3bfd8dd33a10b2ed261
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed May 25 16:07:56 2022 -0400
+
+    To support multiple CSRs per tenant (#1997)
+
+commit 69e1d653ce3e9fc3e750a04b75a6276a41072060
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed May 25 13:24:04 2022 -0400
+
+    To update replication test accordingly (#2038)
+
+commit 39d3690ac015658f123863651998bc8636fae9b9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri May 20 22:50:55 2022 -0400
+
+    Adding missing tests (#2024)
+
+commit 326d709bf9a8aa6a1df6c3c09fb9ee70a248cb46
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri May 20 19:21:43 2022 -0400
+
+    Increase coverage threshold (#2023)
+
+commit 40dcc9eb33d9e6b3b0afc7a3239bda977b9dfdd3
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 19 22:43:07 2022 -0400
+
+    Update Operator API Test (#2017)
+
+commit c20e9adaeb3c0af9db6c85e1abc4692246a86e86
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 12 20:27:35 2022 -0400
+
+    correcting sso token port for coverage (#1981)
+
+commit d417874608c5b7b0186a8244d1e94820bb545245
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 10 22:12:32 2022 -0400
+
+    put the coverage file in play bucket (#1972)
+
+commit bc4abe100e3a84ef73f55d364a1aecce016f555a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue May 10 18:03:23 2022 -0400
+
+    increase coverage (#1971)
+
+commit 0c822ffa980daf270fb94cfc89a7b425f6d16641
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon May 9 14:35:19 2022 -0400
+
+    Add CSR end point (#1893)
+
+commit 9d052703ad4d05c858b720dd012697fe24585e68
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri May 6 12:27:54 2022 -0400
+
+    Focus on testing Diag UI only, if BE fails, we skip that (#1958)
+
+commit 4c99b0d1d9801e18897846071945a8a09573a7d4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu May 5 13:29:41 2022 -0400
+
+    Simplify SSO Integration Test (#1954)
+
+commit 130413cbef944dedc947e524ba3634023320c40e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Apr 29 17:48:21 2022 -0400
+
+    having idp configured via env variable only (#1931)
+
+commit bd0edea3df2b50adcbfe32417cd545d92bd6ab5b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 27 17:49:58 2022 -0400
+
+    Increase coverage threshold (#1914)
+
+commit 0df796bc03a3c28093c788d83bc2162e61a78814
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 27 15:33:10 2022 -0400
+
+    fixing integration tests to use proxy (#1912)
+
+commit c2455e3f0602293409e668af26c706bfa6928c1f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 21 18:31:52 2022 -0400
+
+    Fixing Permissions Tests Part 2 (#1884)
+
+commit 3291b3ca45d02f265427b12f08f149744a635d42
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 20 14:38:49 2022 -0400
+
+    Test change password response (#1877)
+
+commit 9b7fdfd28679fdb6a7a47cdefd0daf83e2bf3d2f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 20 12:07:16 2022 -0400
+
+    Removing unnecessary error check (#1876)
+
+commit 5b25a6cb53dbf44b25c7f135c1b9fd6d34557151
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 19 21:19:50 2022 -0400
+
+    Recalibrating our coverage threshold (#1871)
+
+commit 50bc755b44d00d926dcc8692a5be7316eb98e6ee
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Apr 18 10:25:21 2022 -0400
+
+    Test invalid url in getWatchOptionsFromReq() (#1850)
+
+commit 75fc68cd181ae9a5738cff17b7c29ca78d70d456
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Apr 14 17:55:32 2022 -0400
+
+    correcting error message to be same as our code (#1851)
+
+commit 5e10719168b14f65bda598b9921409c965c3bf96
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Apr 13 10:13:19 2022 -0400
+
+    Adding test to cover registerAdminArnsHandlers() (#1835)
+
+commit 0e5561032c3bcc5cb83d74a6eb5a907d1d056283
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Apr 12 19:28:48 2022 -0400
+
+    Adding unittest for user_watch.go (#1833)
+
+commit e9cc5679777912cda496ea5cd7f5490aff823298
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Apr 11 12:56:16 2022 -0400
+
+    correcting the testing package (#1819)
+
+commit ea0c83ea748d20105830bee405b1a8633fe20926
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 31 20:35:25 2022 -0400
+
+    Node Labels Test (#1787)
+
+commit 70214a6578184ea0405bf2ae6b48ad7ad77ad199
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 28 19:12:52 2022 -0400
+
+    List Users With Access to a Given Bucket Integration Test (#1771)
+    
+    List Users With Access to a Given Bucket Integration Test
+    Incrementing coverage threshold
+
+commit 2765fb0c97fa945be8fd1edc4a8a45be83380a07
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 25 13:34:29 2022 -0400
+
+    Get objects in a bucket for a rewind date Test (#1766)
+    
+    * Get objects in a bucket for a rewind date Test
+    
+    * Incrementing the coverage
+
+commit d22f345d4a79526b59ffa37eee80bde417a489dc
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 24 23:11:42 2022 -0400
+
+    SSO Integration Test (#1742)
+
+commit 676420a2b3c45402b43ba25d9c0b24fd39bcb9d7
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 24 18:25:38 2022 -0400
+
+    List Policies With Given Bucket Test (#1765)
+    
+    List Policies With Given Bucket Test
+    Incrementing the coverage
+
+commit f582d83afceef8e9d1e35fa2e2b66ff7a78fe2ea
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Mar 23 21:35:10 2022 -0400
+
+    Splitting permission test (#1757)
+
+commit 144979b3722c65ae3f6db6942696d0e7d6704993
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Mar 19 20:30:20 2022 -0400
+
+    Delete Multiple Service Accounts (#1737)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 3a093618995463fd51cd8d05f159009a63691e8c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 18 13:18:37 2022 -0400
+
+    List tenants by namespace test (#1736)
+
+commit 39453de8fbcca8be35d76caed4a1b992f18fcd60
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 17 14:27:45 2022 -0400
+
+    To use DeleteMultipleObjects func and be able to debug via Browser (#1730)
+
+commit b11fa26162231815594e0357adeac572a1f70ad8
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Mar 16 18:57:30 2022 -0400
+
+    Adding test for creating tenant via API (#1727)
+
+commit 7f4546e87950c65c7531a87e73909e3320de3ab8
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 15 23:49:17 2022 -0400
+
+    Adding Access Rules Integration Test (#1719)
+
+commit cc43b3c743035d9b0b0830d58604e23604b308b9
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 15 23:13:33 2022 -0400
+
+    Add list of tenants integration test (#1722)
+
+commit e060e1d97ee275a51d4705478476b99d83244ae4
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 14 21:48:25 2022 -0400
+
+    Add Bucket LifeCycle Integration Test (#1711)
+
+commit 86a3072fa976f04ca17fe76c553215b2ba6e1dea
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 11 01:42:09 2022 -0500
+
+    Increasing coverage threshold from 48% to 49.4% (#1697)
+    
+    * Increasing coverage threshold
+    
+    * correcting the comparison logic
+
+commit 94c60e18379a51ded630d4393d63b324109fbfc1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 10 18:05:19 2022 -0500
+
+    add test to delete bucket encryption (#1695)
+
+commit c6bd1a28d344abce1183a32f6c29474a057c170f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 10 00:00:31 2022 -0500
+
+    Adding Get bucket encryption information test (#1691)
+
+commit 414db326bb88ead28bb5e089dbe5ce07dbb8491a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Mar 9 17:07:15 2022 -0500
+
+    Adding bucket encryption test (#1687)
+
+commit 25562bd55b4abb61f40da8c90e63cf1a7254520f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 7 22:03:00 2022 -0500
+
+    re-using code by implementing add bucket verification only once (#1678)
+
+commit bff35bb13ab43b6a07c48aac0b025213960fa648
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 7 21:50:28 2022 -0500
+
+    Adding object-locking test (#1674)
+
+commit fd09a4c815c4e7c8c5fc02e48f6fbd1a5c0c281b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 7 17:08:27 2022 -0500
+
+    Cleaning our logs for clarity (#1670)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit f5edca5a31e1b5f44bc3b20ef95f706c21bd7d3b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Mar 7 16:37:55 2022 -0500
+
+    Add Set Bucket Versioning Test (#1669)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 7c26d583a6edce1ec3d40401b6dc3b6f0de2a917
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Mar 5 15:20:00 2022 -0500
+
+    Allow manually executing integration tests (#1671)
+
+commit 4d4a159d247a74a21b719b2ec37cd1b07ce9ccfa
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 4 15:21:41 2022 -0500
+
+    increase coverage threshold (#1667)
+
+commit 4cb48b86aa08caaa243cb3eca584a734284fd3f1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 4 13:26:15 2022 -0500
+
+    Add get bucket versioning test on top of an existing test (#1666)
+
+commit 2c548be5af0955d3a8e9422fe53f094e16b5136a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Mar 4 12:40:46 2022 -0500
+
+    reuse golang dependencies (#1662)
+
+commit 0de9ff38f489216d1600edb4ecf6cc1643eea597
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Mar 3 15:00:49 2022 -0500
+
+    removing operator repo (#1659)
+
+commit 768181cf8b78777fda3afd6fa013e83dd55b2035
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Mar 2 23:26:32 2022 -0500
+
+    improving coverage limit check (#1647)
+
+commit eb3881fc74de1394b1f01b0de5cd714250ab2e0e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Mar 2 19:55:26 2022 -0500
+
+    Adding delete bucket replication test (#1654)
+
+commit 57e995fc713dc1e98ecaf3e414773ed29a34a017
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 1 15:08:32 2022 -0500
+
+    Blocking PR to be merged if coverage is below the threshold (#1640)
+
+commit 645f98284d1b2b8c5623e5f84c286a8605048df5
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Mar 1 12:08:22 2022 -0500
+
+    Adding bucket replication test (#1635)
+    
+    Co-authored-by: Prakash Senthil Vel <23444145+prakashsvmx@users.noreply.github.com>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+
+commit 96d59fb7cc3200a8d0794892d885fc8ce5973ebe
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Feb 28 17:53:14 2022 -0500
+
+    Delete Bucket Event Test (#1633)
+
+commit e52fb7d8b5bab2de3f0c5ef742aaf4aa91d27912
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Feb 28 00:57:33 2022 -0500
+
+    Speed up tests (#1630)
+
+commit be326c37d068be07738bea5b57ec514d9ab02e0a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sun Feb 27 01:40:08 2022 -0500
+
+    Correcting DB name (#1631)
+
+commit af3b0cd5f3473ee260ccffb2ecb88a58be2bbd07
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 24 21:27:37 2022 -0500
+
+    splitting admin tests from users tests (#1619)
+
+commit 815648fe32628696f5a401f000d310f3b1483fa0
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 23 23:49:35 2022 -0500
+
+    Adding the restart API test (#1617)
+
+commit 83fc075bc99e81b332f2c9ab823bb5deec411f7b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 22 18:20:24 2022 -0500
+
+    Using Kustomize to get YAML files (#1616)
+
+commit b130c89297f41516198a5b06004a094b5b95ab9e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 22 13:53:39 2022 -0500
+
+    Get Operator files for testing (#1613)
+
+commit 1f97f39864a83e8215917dcd4c0190c297ab90a0
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 22 12:39:58 2022 -0500
+
+    Add test for Put Objects legalhold status end point in Console API (#1577)
+
+commit 844162a7ab2d4f0f2cd18db04bd4118736159233
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 22 00:57:09 2022 -0500
+
+    Add test to list the tenants in Operator UI (#1605)
+    
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+
+commit 28dcd19dd9422c0dd151555ee4e8892c52d18c3c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Feb 18 23:08:07 2022 -0500
+
+    Adding IDs for Operator tests (#1599)
+
+commit 3cc218b97e3568a562c5de7e6319a32cfa48d052
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 17 14:13:41 2022 -0500
+
+    Add test for List Bucket Events end point (#1576)
+
+commit 1f6e2e7f431affa9efd4cd083df43a84a7d685ba
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 17 12:09:44 2022 -0500
+
+    Put proper name to the tests (#1598)
+
+commit 9f521bbfb4a37b20f8dbb6eb8f5e90123f8f293a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 17 11:54:16 2022 -0500
+
+    Add Operator test (#1591)
+
+commit 3307d6f2822e7208379186e7b3ebfb6e8ce4e47d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 16 19:51:26 2022 -0500
+
+    put id on create tenant button for testing purposes (#1588)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 031ee35a00524ff36c47f54e24cfb5e184f25391
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 16 13:23:14 2022 -0500
+
+    Add PostgreSQL Notification Test (#1578)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 4507ceb36d076ce6a8bf199465898685f34758ca
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 16 12:53:34 2022 -0500
+
+    Allowing distributed mode in MinIO (#1585)
+
+commit 081df4b535ea00048e592c8998bd84a276af3960
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 16 11:33:38 2022 -0500
+
+    Add tests for bucket quota end points (#1575)
+
+commit e580af82050f57330a74801d3e6055e1087a9f30
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 15 23:58:10 2022 -0500
+
+    Giving more stability to our testcafe (#1582)
+
+commit 00c4ba430d799fdd6b63561190a8314827a8475a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 15 19:28:13 2022 -0500
+
+    Add test for Delete Object retention from an object end point (#1574)
+
+commit 0ac6ceca3fe0cb2454b14364ffaf52181b60117f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 15 13:01:10 2022 -0500
+
+    Adding 4 volumes to run MinIO Distributed on the tests (#1572)
+    
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit a232d73cb174ff2c2383617313f5acb0a64b6a67
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Feb 12 00:55:26 2022 -0500
+
+    Add test for Bucket Set Policy end point (#1562)
+
+commit c986baf2aec0b1242aae4918cae0c291868de4bf
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Feb 11 14:49:01 2022 -0500
+
+    Add test for Restore Object to a selected version end point (#1558)
+
+commit ed5cf89776b87fc96dad19afcad901b95bed88ce
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Feb 11 13:17:04 2022 -0500
+
+    Add test for Put Buckets tags end point (#1556)
+
+commit fa3f2283cf47e3f303e256e1c7fb98bb74f0745e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 10 21:09:30 2022 -0500
+
+    Add test for Gets the metadata of an object end point (#1555)
+
+commit 07ef32bee30ebaa859e3a16323f84ae72e4c35fc
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Feb 10 12:24:09 2022 -0500
+
+    Add test for Put Objects retention status end point (#1542)
+
+commit 3d70427e2b969fdbbd6580029ce09072cf58eedc
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 9 18:42:52 2022 -0500
+
+    Add test for Shares an Object on a url end point (#1535)
+
+commit 3262b8fd8f0fb392efcd6e8621f960a1a3c9c1ba
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 8 13:39:15 2022 -0500
+
+    Adding test for service-account-credentials end point (#1528)
+
+commit 7f05c0bf06e7c54c767d11aa5660553dc93b9093
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Feb 5 12:26:33 2022 -0500
+
+    Convert to table driven test (#1506)
+
+commit c52ba1f859bef9b1dee18e7cede71f8570117826
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 2 13:29:43 2022 -0600
+
+    Test to delete multiple objects (#1479)
+
+commit d62235ee58782b1353a0a795f9e4d35ac709ff28
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Feb 2 13:06:01 2022 -0600
+
+    Add test for listing an object (#1484)
+    
+    * Add test for listing an object
+    
+    * Add test for listing an object
+
+commit 02acb76ac98b93ab6bbb1a5b3adb96de3b6d5d46
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Feb 1 10:42:09 2022 -0600
+
+    Add test for Bulk functionality to Add Users to Groups (#1495)
+    
+    Co-authored-by: Lenin Alevski <alevsk.8772@gmail.com>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit ce989e39abd335c26a18f07784f54902bbad321c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 31 20:46:40 2022 -0600
+
+    Add test to add tag to an object (#1481)
+
+commit 06e1592b548668058e6a41232bdbff42458e104a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 31 10:25:35 2022 -0600
+
+    Added test for downloading an object (#1480)
+
+commit 4a1ccf19a023cba1d1aec55720ba3e3d20651401
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 28 21:24:53 2022 -0600
+
+    Removing unused parameters (#1465)
+
+commit 2e9a42320cff0d1eb8b23249fb45430a7805015a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 28 12:01:38 2022 -0600
+
+    Test to delete object (#1477)
+
+commit 834e3fb9967a3c795f0dd5d4fd73f298d7139856
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 28 00:51:13 2022 -0500
+
+    Add test to upload an object (#1473)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 0b7d4a2c35394dd61d3a917537b04aa06dccff4f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jan 27 20:56:09 2022 -0500
+
+    Add delete bucket test (#1457)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit e13626e92bd5517efa8ef4e2ea01afb65580e5fc
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jan 27 20:31:13 2022 -0500
+
+    Add new test for service account for user (#1469)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 95ebc3bedfb8beefbd175c9222336ae969d6506a
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jan 26 14:38:14 2022 -0500
+
+    add test to modify users group (#1462)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit e626f59feb924547b379f4d0b88b2a22a09fbd5b
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jan 25 19:33:54 2022 -0500
+
+    Add bucket retention test (#1459)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+
+commit 4c0c46f5a855b0325740249989b29b222024020c
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jan 25 15:16:51 2022 -0500
+
+    Adding Bucket Info Test (#1446)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+
+commit 6404a1b9847ef7b71f7eb2e12014f06919e9e46f
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Tue Jan 25 13:23:25 2022 -0500
+
+    Add test for removing a user (#1450)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 7e43719e20a24ae98ce181103f42efdd0812f73d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 24 13:09:27 2022 -0500
+
+    Update User Information Test (#1442)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 0ba60bd6748425ac353a78b621b89920a4aac28d
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Mon Jan 24 12:27:32 2022 -0500
+
+    Add test for listing buckets (#1440)
+
+commit ceff2840d80fa123f8f5337fad23eb1cb818e9ed
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jan 22 23:58:51 2022 -0500
+
+    Add get user info test (#1438)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Daniel Valdivia <18384552+dvaldivia@users.noreply.github.com>
+
+commit 276eff4f15915d04b5b79afb876015f95f85aaba
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 21 22:54:36 2022 -0500
+
+    Add list user test (#1435)
+
+commit 14f032971bcd1379e02032e9b4d3102c17a47723
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 21 19:41:19 2022 -0500
+
+    Improving bucket tests in Console API (#1430)
+
+commit df4c63e2a3c8b898b206d75103e289b772967e0e
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Fri Jan 21 13:20:30 2022 -0500
+
+    Make bucket Integration Test (#1424)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+
+commit 51ce548a00f0762782feb042e5f565ed64e83bcc
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jan 20 22:49:54 2022 -0500
+
+    Add User Integration Test #414 (#1417)
+
+commit 158c231858d13d35659cbe12cd4d7a3677fb70ff
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Sat Jan 15 12:24:54 2022 -0500
+
+    Update Integration tests on console to build MinIO latest (#1398)
+
+commit 5745137a34c046c41a3e7de878c65b23017c6fd1
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Thu Jan 13 14:10:05 2022 -0500
+
+    updating operator in console (#1393)
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+
+commit 1871f2bf9e2bc63a222344b853756fd2babcfc72
+Author: Cesar Celis Hernandez <celis.hernandez.cesar@gmail.com>
+Date:   Wed Jan 12 19:57:50 2022 -0500
+
+    to fail test when yarn does not build (#1388)
+    
+    * to fail test when yarn does not build
+    
+    * Warnings cleanup (#1389)
+    
+    Signed-off-by: Benjamin Perez <benjamin@bexsoft.net>
+    
+    Co-authored-by: Benjamin Perez <benjamin@bexsoft.net>
+    
+    * to fail test when yarn does not build
+    
+    Co-authored-by: cniackz <cniackz@cniackzs-MacBook-Air.local>
+    Co-authored-by: Alex <33497058+bexsoft@users.noreply.github.com>
+    Co-authored-by: Benjamin Perez <benjamin@bexsoft.net>
